@@ -15,6 +15,7 @@ class WebpageAssessorsController < ApplicationController
 
   def show
     @webpage_accessor = WebpageAssessor.find(params[:id])
+    @url_evaluator = UrlEvaluator.new(url: @webpage_accessor.url)
   end
 
   def webpage_assessor_params

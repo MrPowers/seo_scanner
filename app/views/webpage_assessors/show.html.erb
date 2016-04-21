@@ -1,2 +1,8 @@
 <p><%= @webpage_accessor.email %></p>
 <p><%= @webpage_accessor.url %></p>
+
+<ol>
+  <% @url_evaluator.assess.each do |check, description| %>
+    <li><%= description %></li>
+  <% end %>
+</ol>
