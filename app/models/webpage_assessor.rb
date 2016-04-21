@@ -1,6 +1,7 @@
 class WebpageAssessor < ActiveRecord::Base
 
   validate :url_format_valid
+  validates :email, email: true
 
   def url_format_valid
     unless valid_url?
