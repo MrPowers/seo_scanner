@@ -1,7 +1,15 @@
-<%= form_for @webpage_accessor do |f| %>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
-  <%= f.label :url %><br>
-  <%= f.text_field :url %><br>
-  <%= f.submit %>
-<% end %>
+<div class="container theme-showcase" role="main">
+  <div class="jumbotron">
+    <h1>Get your FREE SEO report</h1>
+    <p>Just fill out the following form and we'll email you an SEO report that's customized for your website!</p>
+
+    <%= form_for @webpage_accessor do |f| %>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %><br>
+      <%= f.label :url %><br>
+      <%= f.text_field :url %><br>
+      <%= f.submit %>
+    <% end %>
+
+  </div>
+</div>
