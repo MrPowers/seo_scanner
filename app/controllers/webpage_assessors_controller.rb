@@ -7,9 +7,10 @@ class WebpageAssessorsController < ApplicationController
   def create
     @webpage_accessor = WebpageAssessor.new(webpage_assessor_params)
     if @webpage_accessor.save
+      flash[:success] = 'We will send you an email shortly!'
       redirect_to @webpage_accessor
     else
-      redirect_to new_webpage_assessor_path
+      render :new
     end
   end
 

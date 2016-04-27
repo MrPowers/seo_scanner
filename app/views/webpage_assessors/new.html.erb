@@ -4,6 +4,17 @@
     <p>Just fill out the following form and we'll email you an SEO report that's customized for your website!</p>
 
     <%= form_for @webpage_accessor do |f| %>
+      <% if @webpage_accessor.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@webpage_accessor.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+          <% @webpage_accessor.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
       <%= f.label :email %><br>
       <%= f.text_field :email %><br>
       <%= f.label :url %><br>
